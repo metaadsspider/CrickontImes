@@ -1,57 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Live Cricket Stream - SK FC Player</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.compiled.min.js"></script>
-  <style>
-    body {
-      background: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 20px;
-    }
-    video {
-      width: 90%;
-      max-width: 800px;
-      height: 450px;
-      background: #222;
-    }
-    #telegram {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: #0088cc;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-  </style>
-</head>
-<body>
-  <h1>SK FC - Live Cricket Streaming</h1>
-  <video id="video" controls autoplay></video>
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 10px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Launch SK FC Stream</h3>
+    <button onclick="openPlayer()">📺 Open Player</button>
 
-  <a id="telegram" href="https://t.me/yourchannel" target="_blank">📣 Join Our Telegram</a>
-
-  <script>
-    shaka.polyfill.installAll();
-    if (shaka.Player.isBrowserSupported()) {
-      const player = new shaka.Player(document.getElementById('video'));
-
-      const originalStream = "https://in-mc-fdlive.fancode.com/mumbai/130597_english_hls_2150adfreeta-di_h264/index.m3u8";
-      const proxyUrl = window.location.origin + "/proxy?url=" + encodeURIComponent(originalStream);
-
-      player.load(proxyUrl).then(() => {
-        console.log("Stream loaded!");
-      }).catch(error => {
-        console.error("Error loading stream:", error);
-      });
-    } else {
-      alert("Your browser does not support Shaka Player.");
-    }
-  </script>
-</body>
+    <script>
+      function openPlayer() {
+        chrome.tabs.create({
+          url: "https://yourdomain.github.io/cricket-live/",
+        });
+      }
+    </script>
+  </body>
 </html>
