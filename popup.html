@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 10px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Launch SK FC Stream</h3>
+    <button onclick="openPlayer()">📺 Open Player</button>
+
+    <script>
+      function openPlayer() {
+        chrome.tabs.create({
+          url: "https://yourdomain.github.io/cricket-live/",
+        });
+      }
+    </script>
+  </body>
+</html>
