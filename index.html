@@ -41,7 +41,7 @@
     if (shaka.Player.isBrowserSupported()) {
       const player = new shaka.Player(document.getElementById('video'));
 
-      const originalStream = "https://cdn-asia.styxsports.live/LiveApp/streams/67IQGzOT1XZWS7Kx24864725612676.m3u8";
+      const originalStream = "https://in-mc-fdlive.fancode.com/mumbai/130597_english_hls_2150adfreeta-di_h264/index.m3u8";
       const proxyUrl = window.location.origin + "/proxy?url=" + encodeURIComponent(originalStream);
 
       player.load(proxyUrl).then(() => {
