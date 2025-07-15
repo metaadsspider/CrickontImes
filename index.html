@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Cricket Stream - SK FC Player</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.3.5/shaka-player.compiled.min.js"></script>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+    video {
+      width: 90%;
+      max-width: 800px;
+      height: 450px;
+      background: #222;
+    }
+    #telegram {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #0088cc;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>SK FC - Live Cricket Streaming</h1>
+  <video id="video" controls autoplay></video>
+
+  <a id="telegram" href="https://t.me/yourchannel" target="_blank">📣 Join Our Telegram</a>
+
+  <script>
+    shaka.polyfill.installAll();
+    if (shaka.Player.isBrowserSupported()) {
+      const player = new shaka.Player(document.getElementById('video'));
+
+      const originalStream = "https://www.styxsports.com/live-match/cricket/pondicherry-premier-league-2025/genid-yanam-royals-vs-osudu-accord-warriors-live-match-17/686d28dec86f85c45970efcb";
+      const proxyUrl = window.location.origin + "/proxy?url=" + encodeURIComponent(originalStream);
+
+      player.load(proxyUrl).then(() => {
+        console.log("Stream loaded!");
+      }).catch(error => {
+        console.error("Error loading stream:", error);
+      });
+    } else {
+      alert("Your browser does not support Shaka Player.");
+    }
+  </script>
+</body>
+</html>
