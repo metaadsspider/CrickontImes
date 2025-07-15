@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "SK FC Stream Launcher",
+  "version": "1.0",
+  "description": "Play cricket streams via proxy",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "permissions": ["tabs"]
+}
