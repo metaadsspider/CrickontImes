@@ -1,13 +1,3 @@
 {
-  "name": "cors-proxy",
-  "version": "1.0.0",
-  "main": "proxy.js",
-  "scripts": {
-    "start": "node proxy.js"
-  },
-  "dependencies": {
-    "express": "^4.17.1",
-    "request": "^2.88.2",
-    "cors": "^2.8.5"
-  }
+  "live_match": "https://in-mc-fdlive.fancode.com/mumbai/130597_english_hls_2150adfreeta-di_h264/index.m3u8"
 }
